@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="se.sdaproject.LinkedListTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-03-08T23:02:57" hostname="MacBook-Pro-de-Clement.local" time="0.481">
+<testsuite name="se.sdaproject.LinkedListTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-08T23:15:29" hostname="MacBook-Pro-de-Clement.local" time="0.215">
   <properties/>
-  <testcase name="addANumberToList()" classname="se.sdaproject.LinkedListTests" time="0.239"/>
-  <testcase name="testGet()" classname="se.sdaproject.LinkedListTests" time="0.03"/>
-  <testcase name="addsTwoNumbers()" classname="se.sdaproject.LinkedListTests" time="0.004"/>
-  <testcase name="testSearchFirst()" classname="se.sdaproject.LinkedListTests" time="0.004"/>
-  <testcase name="testSize()" classname="se.sdaproject.LinkedListTests" time="0.005"/>
-  <testcase name="testToStringOfEmptyList()" classname="se.sdaproject.LinkedListTests" time="0.004"/>
-  <testcase name="testRemove()" classname="se.sdaproject.LinkedListTests" time="0.022"/>
-  <testcase name="testSearch()" classname="se.sdaproject.LinkedListTests" time="0.066"/>
+  <testcase name="testRemove()" classname="se.sdaproject.LinkedListTests" time="0.215"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

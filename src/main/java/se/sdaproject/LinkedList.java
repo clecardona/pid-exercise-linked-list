@@ -1,13 +1,17 @@
 package se.sdaproject;
 
-import static java.lang.String.*;
 
-// a node
 class Node {
     // field 1: the data in our case just an integer
     int elem;
     // field 2: the reference to the next node
     Node next;
+
+    /**
+     * Constructor
+     *
+     * @param num : the value of the node / cell
+     */
     Node(int num) {
         this.elem = num;
         this.next = null;
@@ -51,7 +55,6 @@ public class LinkedList {
 
     }
 
-
     public String toString() {
         // goal is to return a string like this:
         // "LinkedList(5,2,10)"
@@ -91,6 +94,7 @@ public class LinkedList {
 
     /**
      * Search index that match the value passed in argument.
+     *
      * @param valueToFind
      * @return a String that concatenates the index corresponding
      */
@@ -99,14 +103,14 @@ public class LinkedList {
         String result = "";
         int index = 0;
 
-        while (current!= null) {
+        while (current != null) {
 
             if (current.elem == valueToFind) {
                 // if the element is found
                 //the value of the index is converted
                 //to a string and concatenated
 
-                result +=  Integer.toString(index)+" ";
+                result += Integer.toString(index) + " ";
 
             }
 
@@ -120,19 +124,20 @@ public class LinkedList {
 
     /**
      * Search THE FIRST index that match the value passed in argument.
+     *
      * @param valueToFind
      * @return an int corresponding to the 1st index with the value
      */
     public int searchFirst(int valueToFind) {
         Node current = first;
-        int  result =-1;
+        int result = -1;
         int index = 0;
 
-        while (current!= null) {
+        while (current != null) {
 
             if (current.elem == valueToFind) {
                 // if the element is found
-                result =index;
+                result = index;
                 break; // exits the loop
 
             }
@@ -151,7 +156,7 @@ public class LinkedList {
         int result = -1; // by default
         int indexToReach = 0;
 
-        if (key >= 0 ) {
+        if (key >= 0) {
             while (current != null) { // other cases will return -1
 
                 if (indexToReach == key) {// if the index is reached
@@ -179,7 +184,7 @@ public class LinkedList {
                 current = current.next;
             }
 
-        }else{
+        } else {
             count = 0;
         }
 
@@ -187,7 +192,7 @@ public class LinkedList {
 
     }
 
-    public LinkedList remove(LinkedList list, int valueToDelete) {
+    public void remove(LinkedList list, int valueToDelete) {
 
         Node current = list.first;
         Node previous = null;
@@ -195,12 +200,13 @@ public class LinkedList {
         //list.searchFirst(valueToDelete);
 
 
-            if (current != null && current.elem == valueToDelete) {
-                list.first = current.next; // Changed the first by the next after current
-                return list;
-            }
+        if (current != null && current.elem == valueToDelete) {
+            list.first = current.next; // Changed the first by the next after current
 
-            while (current != null && current.elem != valueToDelete) { // iterate through the list
+        }else {
+
+            while (current != null && current.elem != valueToDelete) {
+                // iterate through the list
                 // If current does not hold key
                 // continue to next node
                 previous = current;
@@ -211,10 +217,9 @@ public class LinkedList {
             if (current != null) {
                 previous.next = current.next;
             }
+        }
 
-        return list;
     }
-
 
 
 }
