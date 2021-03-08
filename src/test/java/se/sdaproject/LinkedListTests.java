@@ -44,6 +44,22 @@ class LinkedListTests {
     }
 
     @Test
+    void testSearchFirst() {
+        LinkedList list = new LinkedList();
+        list.add(1);// index 0
+        list.add(2);// index 1
+        list.add(4);// index 2
+        list.add(8);// index 3
+        list.add(9);// index 4
+
+
+        assertEquals(list.searchFirst(8), 3);
+        assertEquals(list.searchFirst(9), 4);
+        assertEquals(list.searchFirst(3), -1);
+
+    }
+
+    @Test
     void testSize() {
         LinkedList list = new LinkedList();
 
@@ -80,5 +96,37 @@ class LinkedListTests {
 
     }
 
+    @Test
+    void testRemove() {
+        LinkedList list = new LinkedList();
+        list.add(1);// key 0
+        list.add(2);// key 1
+        list.add(4);// key 2 - will be removed
+        list.add(8);// key 3
+        list.add(9);// key 4
+
+
+        list.remove(list,4);
+
+        String expected = "LinkedList(1,2,8,9)";
+
+        assertEquals(list.toString(), expected);
+
+        list.remove(list,4);
+        expected = "LinkedList(1,2,8,9)";
+
+        assertEquals(list.toString(), expected);
+
+        list.remove(list,8);
+        expected = "LinkedList(1,2,9)";
+
+        assertEquals(list.toString(), expected);
+
+        list.remove(list,1);
+        expected = "LinkedList(2,9)";
+
+        assertEquals(list.toString(), expected);
+
+    }
 
 }
